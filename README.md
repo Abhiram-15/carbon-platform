@@ -14,7 +14,7 @@ Run** as one container.
 
 ## 🔗 Live demo
 
-**<YOUR_CLOUD_RUN_URL>**
+**<https://carbon-platform-omi1.onrender.com/>**
 
 > Running on Cloud Run with live Gemini (Vertex AI) insights and Firestore-backed
 > tracking in project `carbon-platform-abhiram` (`us-central1`).
@@ -193,7 +193,7 @@ gcloud run deploy carbon-platform \
 #   roles/aiplatform.user  (Gemini)   and   roles/datastore.user  (Firestore)
 ```
 
-> **Live deployment:** <YOUR_CLOUD_RUN_URL>
+> **Live deployment:** <https://carbon-platform-omi1.onrender.com/>
 
 ---
 
