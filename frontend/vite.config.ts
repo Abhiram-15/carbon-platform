@@ -1,6 +1,10 @@
-/// <reference types="vitest" />
-import { defineConfig } from "vite";
+import { defineConfig, UserConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import type { InlineConfig } from "vitest";
+
+interface VitestConfigExport extends UserConfig {
+  test: InlineConfig;
+}
 
 // In dev, proxy API calls to the FastAPI backend so the SPA and API share an
 // origin (mirroring the single-container production setup).
@@ -15,8 +19,6 @@ export default defineConfig({
     outDir: "dist",
     sourcemap: false,
   },
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore: Vitest type augmentation isn't picked up by the compiler here
   test: {
     globals: true,
     environment: "jsdom",
@@ -36,4 +38,4 @@ export default defineConfig({
       },
     },
   },
-});
+} as VitestConfigExport);

@@ -5,10 +5,10 @@ from __future__ import annotations
 from app.carbon import factors
 from app.carbon.calculator import calculate_footprint
 from app.insights.rules import generate_rule_based_insights
-from app.models import CarbonInput, ConsumptionInput, HomeInput, TransportInput
+from app.models import CarbonInput, ConsumptionInput, HomeInput, InsightsResponse, TransportInput
 
 
-def _insights_for(data: CarbonInput):
+def _insights_for(data: CarbonInput) -> InsightsResponse:
     return generate_rule_based_insights(data, calculate_footprint(data))
 
 

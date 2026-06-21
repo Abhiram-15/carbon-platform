@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 from types import SimpleNamespace
+from typing import Any
 
 from app.carbon.calculator import calculate_footprint
 from app.config import Settings
@@ -16,7 +17,7 @@ def _ctx():
     return data, calculate_footprint(data)
 
 
-def _fake_genai_client(response_text: str):
+def _fake_genai_client(response_text: str) -> Any:
     """A stand-in for ``genai.Client`` returning a canned model response."""
 
     class _FakeClient:

@@ -46,3 +46,10 @@ plugins = ["pydantic.mypy"]
 # Google SDKs are imported lazily and ship without complete type stubs.
 module = ["google.*", "google.cloud.*"]
 ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+# Tests do not require strict return type annotations (like `-> None`).
+module = ["tests.*"]
+disallow_untyped_defs = false
+disallow_untyped_calls = false
+check_untyped_defs = false

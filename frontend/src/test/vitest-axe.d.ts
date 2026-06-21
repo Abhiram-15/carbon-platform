@@ -4,7 +4,6 @@ import "vitest";
 import type { AxeMatchers } from "vitest-axe/matchers";
 
 declare module "vitest" {
-  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-  interface Assertion<T = any> extends AxeMatchers {}
-  interface AsymmetricMatchersContaining extends AxeMatchers {}
+  interface Assertion<T = any> extends AxeMatchers { _axe?: never }
+  interface AsymmetricMatchersContaining extends AxeMatchers { _axe?: never }
 }
