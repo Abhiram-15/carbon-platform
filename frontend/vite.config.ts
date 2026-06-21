@@ -15,6 +15,7 @@ export default defineConfig({
     outDir: "dist",
     sourcemap: false,
   },
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore: Vitest type augmentation isn't picked up by the compiler here
   test: {
     globals: true,
